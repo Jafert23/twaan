@@ -1,0 +1,17 @@
+.hero-container {
+    display: grid;
+    object-fit: contain;
+    grid-template-columns: 50% 50%; /* Two equal columns */
+    grid-template-rows: 50% 50%; /* Two equal rows */
+    gap: 10px;
+}
+
+.hero-txt {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.hero-img {
+    object-fit: contain;
+}
