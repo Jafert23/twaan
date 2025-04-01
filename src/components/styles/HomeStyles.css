@@ -1,5 +1,5 @@
 .home-container {
-   width: 100%;
+  max-width: .9fr;
    min-height: 100vh;
    display: flex;
    justify-content: center;
@@ -7,4 +7,5 @@
    padding: 1rem;
    box-sizing: border-box;
    overflow-x: hidden;
+
 }
