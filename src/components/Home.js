@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroContainer from './containers/HeroContainer';
+import './styles/HomeStyles.css';
 
 function Home() {
     return (
