@@ -11,10 +11,17 @@ const staffMembers = [
     imageUrl: placeholderImage // Replace with actual image URL or import
   },
   {
-    id: 1,
-    name: "Elliot Tindall",
-    title: "CTO",
-    description: "Passionate about Web Development and Technological Literacy.",
+    id: 2,
+    name: "Staff#2",
+    title: "Staff#2",
+    description: "Staff#2",
+    imageUrl: placeholderImage // Replace with actual image URL or import
+  },
+  {
+    id: 3,
+    name: "Staff#3",
+    title: "Staff#3",
+    description: "Staff#3",
     imageUrl: placeholderImage // Replace with actual image URL or import
   }
   // Add more staff members here like this:

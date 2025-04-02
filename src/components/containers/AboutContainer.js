@@ -8,7 +8,7 @@ const AboutContainer = () => {
     navigate('/components/pages/Signup.js');
   };
   return (
-    <Container className="container bg-white text-dark p-5">
+    <Container className="container bg-dark text-white p-3">
       <Row className="justify-content-md-center text-center mb-5">
         <Col md={8}>
           <h1>About T.W.A.A.N</h1>
@@ -28,8 +28,8 @@ const AboutContainer = () => {
       </Row>
       <Row xs={1} md={2} lg={3} className="g-4 justify-content-center">
         {staffMembers.map((member) => (
-          <Col key={member.id} className="d-flex align-items-stretch">
-            <Card className="text-center h-100">
+          <Col key={member.id}>
+            <Card className="text-center" style={{ minHeight: '400px' }}>
               <Card.Img variant="top" src={member.imageUrl} alt={member.name} style={{ width: '150px', height: '150px', objectFit: 'cover', margin: '1rem auto 0' }} className="rounded-circle" />
               <Card.Body className="d-flex flex-column">
                 <Card.Title as="h4">{member.name}</Card.Title>

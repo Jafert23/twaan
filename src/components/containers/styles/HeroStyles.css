@@ -1,0 +1,50 @@
+.statistic-card-body {
+  overflow: hidden; /* Hide text outside the container during animation */
+  position: relative; /* Needed for absolute positioning if used */
+  min-height: 60px; /* Example: Set a min-height to prevent collapse when empty */
+}
+
+/* --- Slide Animations --- */
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide out to right */
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOutRight 0.5s forwards;
+}
+
+/* Optional: Base styles for the H1 to prevent reflow issues */
+.statistic-card-body h1 {
+  margin: 0; /* Remove default margins */
+  padding: 1rem 0; /* Add some padding */
+}
+
+/* You might need to adjust .hero-bootstrap-container styles if they interfere */
+.hero-bootstrap-container {
+    background-color: #343a40; /* Example dark background */
+} 

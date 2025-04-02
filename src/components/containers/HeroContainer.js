@@ -1,15 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
-// We might be able to remove this CSS import later if all styles are handled by Bootstrap
-//import './styles/HeroStyles.css'; 
+import { Container, Row, Col, Image, Button, Card } from 'react-bootstrap';
+import { statistics } from '../../assets/data/statisticsData'; // Updated import path
+import { useRotatingStatistics } from '../../hooks/useRotatingStatistics'; // Import custom hook
+import './styles/HeroStyles.css'; 
 
 // Import images directly
-import heroImg1 from '../../assets/images/hero-img1.png';
-import heroImg2 from '../../assets/images/hero-img2.png';
+//TODO: Re-add below images after debugging
+
+//import heroImg1 from '../../assets/images/hero-img1.png';
+//import heroImg2 from '../../assets/images/hero-img2.png';
+const heroImg1 = 'https://dummyimage.com/600x600/000/bcbdcc.png&text=Image+Here';
+const heroImg2 = 'https://dummyimage.com/600x600/000/bcbdcc.png&text=Image+Here';
 
 const HeroContainer = () => {
   const navigate = useNavigate();
+  // Get both statistic and animation class from the hook
+  // Pass animation duration (e.g., 500ms)
+  const [currentStat, animationClass] = useRotatingStatistics(statistics, 5000, 500);
 
   return (
     <Container fluid className="hero-bootstrap-container p-4 p-md-5 text-white">
@@ -23,6 +31,21 @@ const HeroContainer = () => {
         {/* Image Column 1 */}
         <Col lg={6}>
           <Image src={heroImg1} className="d-block mx-lg-auto img-fluid rounded" alt="Hero Image 1" loading="lazy" />
+        </Col>
+      </Row>
+
+      {/* Statistic Row - Updated Structure */}
+      <Row className="justify-content-center my-4"> {/* Center the card column */}
+        <Col xs={11} md={10} lg={8}> {/* Adjust width as needed (lg=8 is ~66%, use lg=10 for ~83%)*/}
+          <Card bg="dark" text="white" className="statistic-card"> {/* Optional: Add custom class for specific card styles */}
+            {/* Added Card.Body with overflow hidden for animation */}
+            <Card.Body className="statistic-card-body">
+              {/* Apply animation class here */}
+              <h1 className={`text-center ${animationClass}`}>
+                {currentStat || '\u00A0'} {/* Display stat or non-breaking space to maintain height */}
+              </h1>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
 
@@ -47,11 +70,11 @@ const HeroContainer = () => {
 
     {/* Button Row */}
     <Row className="mt-4">
-    <Col className="text-center">
-        <Button variant="primary" size="lg" onClick={() => navigate('/components/pages/About.js')}>
-        Learn More
-        </Button>
-    </Col>
+    <div class="d-grid gap-2">
+        <button class="btn btn-dark" type="button" onClick={() => navigate('/components/pages/About.js')}>
+            Learn More
+        </button>
+    </div>
     </Row>
     </Container>
   );
