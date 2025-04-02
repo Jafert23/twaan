@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 const AboutContainer = () => {
   const navigate = useNavigate();
   const goToSignup = () => {
-    navigate('/components/pages/Signup.js');
+    navigate('/signup');
   };
   return (
-    <Container className="container bg-dark text-white p-3">
+    <Container className="container bg-#343a40 text-white p-3">
       <Row className="justify-content-md-center text-center mb-5">
         <Col md={8}>
           <h1>About T.W.A.A.N</h1>
@@ -47,9 +47,11 @@ const AboutContainer = () => {
       {/* Back Button */}
       <Row className="mt-5 text-center">
           <Col>
-             <Button variant="secondary" size="lg" onClick={goToSignup}>
+            <div class="d-grid gap-2">
+             <Button variant="btn btn-outline-light" size="lg" onClick={goToSignup}>
                 Sign-Up!
              </Button>
+            </div>
           </Col>
       </Row>
 

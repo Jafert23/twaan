@@ -71,9 +71,9 @@ const HeroContainer = () => {
     {/* Button Row */}
     <Row className="mt-4">
     <div class="d-grid gap-2">
-        <button class="btn btn-dark" type="button" onClick={() => navigate('/components/pages/About.js')}>
+        <Button variant="btn btn-outline-light" size="lg" onClick={() => navigate('/about')}>
             Learn More
-        </button>
+        </Button>
     </div>
     </Row>
     </Container>

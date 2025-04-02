@@ -2,7 +2,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const SignupContainer = () => {
   return (
-    <Container className="container bg-dark text-white p-5">
+    <Container className="container bg-#343a40 text-white p-5">
       <Row className="justify-content-md-center">
         <Col md={8}>
           <h1 className="text-center mb-4">Sign Up</h1>
@@ -88,7 +88,7 @@ const SignupContainer = () => {
             <input type="hidden" name="_format" value="plaintext" />
 
             <div className="d-grid gap-2">
-              <Button variant="primary" type="submit" size="lg">
+              <Button variant="btn btn-outline-light" type="submit" size="lg">
                 Submit
               </Button>
             </div>
