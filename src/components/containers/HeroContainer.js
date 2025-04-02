@@ -12,7 +12,7 @@ const HeroContainer = () => {
   const navigate = useNavigate();
 
   return (
-    <Container fluid className="hero-bootstrap-container p-4 p-md-5 border rounded-3 bg-dark text-white">
+    <Container fluid className="hero-bootstrap-container p-4 p-md-5 text-white">
       <Row className="align-items-center gy-4">
         {/* Text Column 1 */}
         <Col lg={6} className="text-center text-lg-start">
@@ -24,13 +24,6 @@ const HeroContainer = () => {
         <Col lg={6}>
           <Image src={heroImg1} className="d-block mx-lg-auto img-fluid rounded" alt="Hero Image 1" loading="lazy" />
         </Col>
-      </Row>
-
-      {/* Banner Row */}
-      <Row className="my-4 banner-row text-center bg-secondary py-3 mx-n4 mx-md-n5">
-         <Col>
-           <h1 className="display-6 fw-bold">Make Reading Cool Again!</h1>
-         </Col>
       </Row>
 
       <Row className="align-items-center gy-4 flex-column-reverse flex-lg-row">
@@ -45,15 +38,21 @@ const HeroContainer = () => {
           <p className="lead">Meetings held weekly on Zoom</p>
         </Col>
       </Row>
-
-      {/* Button Row */}
-      <Row className="mt-4">
-        <Col className="text-center">
-          <Button variant="primary" size="lg" onClick={() => navigate('/about')}>
-            Learn More
-          </Button>
+        {/* Banner Row */}
+    <Row className="my-4 banner-row text-center py-3 mx-n4 mx-md-n5">
+        <Col>
+        <h1 className="display-6 fw-bold">Make Reading Cool Again!</h1>
         </Col>
-      </Row>
+    </Row>
+
+    {/* Button Row */}
+    <Row className="mt-4">
+    <Col className="text-center">
+        <Button variant="primary" size="lg" onClick={() => navigate('/components/pages/About.js')}>
+        Learn More
+        </Button>
+    </Col>
+    </Row>
     </Container>
   );
 };

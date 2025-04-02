@@ -1,25 +1,25 @@
 import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Signup from './components/Signup';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Signup from './components/pages/Signup';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/signup">Signup</Link>
+          <Link to="/components/pages/Home.js">Home</Link>
+          <Link to="/components/pages/About.js">About</Link>
+          <Link to="/components/pages/Signup.js">Signup</Link>
         </nav>
       </header>
       
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/components/pages/Home.js" element={<Home />} />
+          <Route path="/components/pages/About.js" element={<About />} />
+          <Route path="/components/pages/Signup.js" element={<Signup />} />
         </Routes>
       </main>
     </div>

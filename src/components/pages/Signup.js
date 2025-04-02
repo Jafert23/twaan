@@ -3,7 +3,7 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 
 function Signup() {
   return (
-    <Container className="mt-5">
+    <Container className="container bg-white text-dark p-3">
       <Row className="justify-content-md-center">
         <Col md={8}>
           <h1 className="text-center mb-4">Sign Up</h1>

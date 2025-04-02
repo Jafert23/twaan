@@ -1,23 +1,14 @@
-import React from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import staffMembers from '../../assets/data/staffData';
 import { useNavigate } from 'react-router-dom';
-import { Container, Button, Row, Col, Card } from 'react-bootstrap';
-import staffMembers from '../staffData'; // Import the staff data
 
-// Placeholder image is now defined in staffData.js, remove if not needed elsewhere
-// const placeholderImage = "https://via.placeholder.com/150"; 
-
-// Staff data is now imported from staffData.js
-// const staffMembers = [...] // Remove this section
-
-function About() {
+const AboutContainer = () => {
   const navigate = useNavigate();
-
-  const goToHome = () => {
-    navigate('/');
+  const goToSignup = () => {
+    navigate('/components/pages/Signup.js');
   };
-
   return (
-    <Container className="mt-5">
+    <Container className="container bg-white text-dark p-5">
       <Row className="justify-content-md-center text-center mb-5">
         <Col md={8}>
           <h1>About T.W.A.A.N</h1>
@@ -56,14 +47,14 @@ function About() {
       {/* Back Button */}
       <Row className="mt-5 text-center">
           <Col>
-             <Button variant="secondary" size="lg" onClick={goToHome}>
-                Back to Home
+             <Button variant="secondary" size="lg" onClick={goToSignup}>
+                Sign-Up!
              </Button>
           </Col>
       </Row>
 
     </Container>
   );
-}
+};
 
-export default About; 
+export default AboutContainer;
